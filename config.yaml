@@ -1,0 +1,73 @@
+# Adversarial Defense Mechanisms Configuration
+
+# Model Configuration
+model_type: "modern_cnn"  # Options: "modern_cnn", "resnet"
+epochs: 10
+batch_size: 64
+learning_rate: 0.001
+
+# Attack Configuration
+attack_types:
+  - "fgsm"
+  - "pgd"
+  - "bim"
+  - "cw"
+
+# Defense Configuration
+defense_types:
+  - "jpeg"
+  - "gaussian_noise"
+  - "gaussian_blur"
+  - "median_filter"
+  - "bit_depth_reduction"
+
+# Epsilon values for attacks
+epsilon_values:
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  - 0.5
+
+# Adversarial Training
+use_adversarial_training: true
+adversarial_training_epsilon: 0.2
+adversarial_training_attack: "fgsm"
+
+# Data Configuration
+data_dir: "./data"
+results_dir: "./results"
+
+# Database Configuration
+database_path: "experiments.db"
+
+# Visualization and Export
+save_models: true
+visualize_results: true
+save_plots: true
+
+# Advanced Configuration
+# PGD Attack Parameters
+pgd_steps: 40
+pgd_alpha: 0.01
+
+# C&W Attack Parameters
+cw_c: 1.0
+cw_kappa: 0.0
+cw_steps: 1000
+
+# Defense Parameters
+jpeg_quality: 75
+gaussian_noise_std: 0.1
+gaussian_blur_sigma: 1.0
+median_filter_kernel_size: 3
+bit_depth_bits: 4
+
+# Training Parameters
+weight_decay: 1e-4
+scheduler_step_size: 10
+scheduler_gamma: 0.5
+
+# Evaluation Parameters
+num_test_samples: 1000
+num_visualization_samples: 5
