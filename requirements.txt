@@ -19,7 +19,7 @@ plotly>=5.0.0
 streamlit>=1.25.0
 
 # Database
-sqlite3  # Built-in with Python
+# sqlite3 is built-in with Python
 
 # Configuration
 pyyaml>=6.0
